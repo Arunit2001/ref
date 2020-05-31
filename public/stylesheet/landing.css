@@ -1,0 +1,14 @@
+body {
+  color: #000;
+}
+
+.main{
+	color: steelblue;
+	font-weight: bold;
+}
+
+.about{
+	color: grey;
+	font-size: 20px;
+}
+

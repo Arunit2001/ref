@@ -1,0 +1,39 @@
+<%- include("./partials/header") %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="thumbnail">
+					<div class="caption">
+						<h4><%= gallery.caption %></h4>
+					</div>
+					<img class="responsive" src=<%= gallery.image %>>
+					<div class="caption">
+						<a class="btn btn-sm btn-primary" href="#">Like</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 well">
+				<form action="/gallery/<%= gallery._id %>/comments" method="POST">
+					<div class="form-group">
+						<input class="form-control" type="text" placeholder="username" name="comments[username]">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" placeholder="   Add comment..." name="comments[content]">
+					</div>
+					<button class="btn btn-sm btn-success">Submit</button>
+				</form>
+				<hr>
+				<% gallery.comment.forEach(function(comments){ %>
+                	<div class="row">
+                		<div class="col-md-12">
+                			<strong><%= comments.username %></strong>
+                			<p><%= comments.content	%></p>
+                		</div>
+                	</div>  
+				<% }) %>
+			</div>
+		</div>
+	</div>
+
+<%- include("./partials/footer") %>

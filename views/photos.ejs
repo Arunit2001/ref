@@ -1,0 +1,22 @@
+<%- include("./partials/header") %>
+
+	<div class="container">
+		<div class="row" style="display:flex; flex-wrap:wrap;">
+			<% for(var i=0; i<gallery.length; i++){ %>
+				<div class="col-md-6 col-md-12">
+					<div class="thumbnail">
+						<div class="caption">
+							<p><%= gallery[i].caption %></p>
+						</div>
+						<img class="responsive" src=<%= gallery[i].image %>>
+						<div class="caption">
+							<a href="#" class="btn btn-sm btn-primary">Like</a>
+							<a href="/gallery/<%= gallery[i]._id %>" class="btn btn-sm btn-success">Comment</a>
+						</div>
+					</div>
+				</div>
+			<% } %>
+		</div>
+	</div>
+
+<%- include("./partials/footer") %>
